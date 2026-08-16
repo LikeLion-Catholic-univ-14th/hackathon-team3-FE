@@ -1,0 +1,368 @@
+.page {
+  width: 100%;
+  max-width: 393px;
+  min-height: 1260px;
+  margin: 0 auto;
+  overflow: visible;
+  background: var(--color-background);
+}
+
+.preview {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  width: 100vw;
+  height: 419px;
+  margin-left: calc(50% - 50vw);
+  margin-top: -19px;
+  border-top: 1px solid #c5c1bb;
+  border-bottom: 1px solid #c5c1bb;
+  background: #efe8dd;
+}
+
+.stepLabel,
+.previewInstruction,
+.eyebrow,
+.title,
+.description,
+.controlName,
+.controlValue {
+  margin-bottom: 0;
+}
+
+.stepLabel {
+  position: absolute;
+  top: 18px;
+  left: 19px;
+  margin-top: 0;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-ui);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 0.7px;
+  white-space: nowrap;
+}
+
+.previewInstruction {
+  position: absolute;
+  top: 41px;
+  left: 19px;
+  margin-top: 0;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-ui);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.bagStage {
+  position: absolute;
+  top: 140px;
+  left: 50%;
+  width: 245.982px;
+  height: 161px;
+  transform: translateX(-50%);
+}
+
+.bagImage {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  display: block;
+  width: 245.982px;
+  height: 164px;
+}
+
+.bagDetail {
+  position: absolute;
+  top: 51px;
+  display: block;
+  width: 11px;
+  height: 11px;
+}
+
+.bagDetailLeft {
+  left: 34px;
+}
+
+.bagDetailRight {
+  left: 200px;
+}
+
+.previewColorChip {
+  position: absolute;
+  top: 80px;
+  left: 175px;
+  width: 26px;
+  height: 26px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  background: #d99d48;
+}
+
+.intro {
+  margin: 21px 27px 0;
+}
+
+.eyebrow {
+  margin-top: 0;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-ui);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 1.7px;
+  white-space: nowrap;
+}
+
+.title {
+  margin-top: 11px;
+  color: #000;
+  font-family: var(--font-family-ui);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: -1.92px;
+  white-space: nowrap;
+}
+
+.description {
+  margin-top: 32px;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-ui);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 100.1%;
+  white-space: nowrap;
+}
+
+.controls {
+  width: calc(100% - 51px);
+  height: 506px;
+  margin-top: 71px;
+  margin-left: 27px;
+}
+
+.rangeControl,
+.colorControl,
+.attitudeControl {
+  position: relative;
+  width: 100%;
+}
+
+.rangeControl {
+  height: 127px;
+}
+
+.colorControl {
+  height: 131px;
+}
+
+.attitudeControl {
+  height: 121px;
+}
+
+.controlHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 1px);
+  color: #000;
+  font-size: 13px;
+  line-height: 13.013px;
+  white-space: nowrap;
+}
+
+.controlName {
+  margin-top: 0;
+  font-family: var(--font-family-ui);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 13.013px;
+}
+
+.controlValue {
+  margin-top: 0;
+  font-family: var(--font-family-display);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 13.013px;
+}
+
+.rangeTrack {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  width: calc(100% - 2px);
+  height: 20px;
+  touch-action: none;
+}
+
+.trackImage {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+}
+
+.rangeThumb {
+  position: absolute;
+  top: 0;
+  left: calc(var(--thumb-position) - 10px);
+  display: block;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.rangeInput {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: 20px;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+}
+
+.rangeInput:focus-visible ~ .rangeThumb {
+  border-radius: 50%;
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+.rangeLabels {
+  position: absolute;
+  top: 63px;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-ui);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 10.01px;
+  white-space: nowrap;
+}
+
+.controlDivider,
+.colorDivider {
+  position: absolute;
+  top: 103px;
+  display: block;
+  width: calc(100% - 2px);
+  height: 1px;
+}
+
+.controlDivider {
+  left: 1px;
+}
+
+.colorDivider {
+  left: 2px;
+}
+
+.swatchList {
+  position: absolute;
+  top: 37px;
+  left: 2px;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.swatch {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.swatchOption {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.swatchInput {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.swatchInput:focus-visible ~ .swatchBorder {
+  border-radius: 50%;
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+.swatchBorder {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.swatchColor {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+
+.summary {
+  display: flex;
+  gap: 79px;
+  margin-left: 28px;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-ui);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 13.013px;
+  white-space: nowrap;
+}
+
+.action {
+  margin: 20px 21px 0;
+}
+
+.continueButton {
+  width: 100%;
+}
+
+@media (max-width: 360px) {
+  .title {
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: -1.68px;
+  }
+
+  .description {
+    margin-top: 36px;
+    font-size: 12px;
+  }
+
+  .summary {
+    justify-content: space-between;
+    gap: 0;
+    margin-right: 28px;
+  }
+}
