@@ -1,0 +1,306 @@
+.page {
+  width: 100%;
+  max-width: 393px;
+  min-height: 1260px;
+  margin: 0 auto;
+  background: var(--color-background);
+}
+
+.intro {
+  margin: 0 19px;
+}
+
+.eyebrow,
+.title,
+.description,
+.noteText {
+  margin-bottom: 0;
+}
+
+.eyebrow {
+  margin-top: 0;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-ui);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.7px;
+  white-space: nowrap;
+}
+
+.title {
+  margin-top: 21px;
+  color: #000;
+  font-family: var(--font-family-display);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -2.8px;
+  white-space: nowrap;
+}
+
+.description {
+  margin-top: 36px;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-ui);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.purposeList {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  margin-left: 19px;
+}
+
+.purposeOption {
+  padding: 10px;
+  border: 1px solid var(--color-text-secondary);
+  border-radius: 0;
+  color: var(--color-text-primary);
+  background: var(--color-background);
+  font-family: var(--font-family-ui);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.selectedPurposeOption {
+  color: #fff;
+  background: #000;
+}
+
+.silhouetteGrid {
+  display: grid;
+  grid-template-rows: 250px 249px 250px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: calc(100% - 53px);
+  height: 749px;
+  margin-top: 31px;
+  margin-left: 27px;
+}
+
+.silhouetteCard {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 250px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-text-secondary);
+  border-radius: 0;
+  color: #000;
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.selectedCard {
+  z-index: 1;
+  border-radius: 10px;
+  color: #fff;
+  background: #000;
+}
+
+.wideCard {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.cardNumber {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-ui);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 1px;
+}
+
+.illustration {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+}
+
+.illustration img {
+  position: absolute;
+  display: block;
+  max-width: none;
+}
+
+.shopperIllustration {
+  top: 86px;
+  left: calc(50% - 48px);
+  width: 96px;
+  height: 73px;
+}
+
+.shopperIllustration img,
+.topHandleIllustration img {
+  top: -1.5px;
+  left: 0;
+  width: 96px;
+  height: 74.5px;
+}
+
+.shoulderIllustration {
+  top: 57.3px;
+  left: calc(50% - 41.7px);
+  width: 99.603px;
+  height: 91.7px;
+}
+
+.strapRotation {
+  position: absolute;
+  top: 8.935px;
+  left: 1.525px;
+  display: block;
+  width: 96.553px;
+  height: 25.315px;
+  transform: rotate(10.94deg);
+}
+
+.strapImage {
+  top: -1.5px;
+  left: -1.5px;
+  width: 99.553px;
+  height: 28.315px;
+}
+
+.shoulderBody {
+  position: absolute;
+  top: 41.7px;
+  left: 3.7px;
+  width: 76px;
+  height: 50px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.selectedShoulderBody {
+  border-color: #fff;
+  background: #e88b2e;
+}
+
+.backpackIllustration {
+  top: 85px;
+  left: calc(50% - 41px);
+  width: 82px;
+  height: 76px;
+}
+
+.backpackIllustration img {
+  top: -1.5px;
+  left: 0;
+  width: 82px;
+  height: 77.5px;
+}
+
+.topHandleIllustration {
+  top: 87px;
+  left: calc(50% - 48px);
+  width: 96px;
+  height: 73px;
+}
+
+.miniIllustration {
+  top: 84px;
+  left: calc(50% - 34px);
+  width: 67px;
+  height: 64px;
+}
+
+.miniIllustration img {
+  top: -1.5px;
+  left: 0;
+  width: 67px;
+  height: 65.5px;
+}
+
+.cardCopy {
+  position: absolute;
+  bottom: 11px;
+  left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wideCardCopy {
+  left: 31px;
+}
+
+.cardTitle {
+  color: currentColor;
+  font-family: var(--font-family-display);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: -0.65px;
+  white-space: nowrap;
+}
+
+.cardDescription {
+  color: #a8a39b;
+  font-family: var(--font-family-ui);
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.shopperDescription {
+  color: #bebab4;
+}
+
+.note {
+  margin-top: 24px;
+  margin-right: 26px;
+  margin-left: 27px;
+}
+
+.divider {
+  display: block;
+  width: 100%;
+  height: 1px;
+}
+
+.noteText {
+  margin-top: 23px;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-ui);
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+@media (max-width: 360px) {
+  .title {
+    font-size: 23px;
+    letter-spacing: -2.3px;
+  }
+
+  .description {
+    font-size: 12px;
+    letter-spacing: -0.1px;
+  }
+
+  .cardTitle {
+    font-size: 11px;
+    letter-spacing: -0.55px;
+  }
+
+  .cardDescription {
+    font-size: 6.5px;
+  }
+}
