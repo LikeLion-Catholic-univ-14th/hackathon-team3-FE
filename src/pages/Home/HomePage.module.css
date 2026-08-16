@@ -1,0 +1,126 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 393px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--color-background);
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.intro {
+  margin: 0 19px;
+}
+
+.eyebrow,
+.title,
+.description,
+.previewTitle {
+  margin-bottom: 0;
+}
+
+.eyebrow {
+  margin-top: 0;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-ui);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.7px;
+  white-space: nowrap;
+}
+
+.title {
+  margin-top: 21px;
+  color: #000;
+  font-family: var(--font-family-display);
+  font-size: 37px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -3.7px;
+  white-space: nowrap;
+}
+
+.description {
+  margin-top: 14px;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-ui);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.action {
+  display: flex;
+  justify-content: center;
+  margin-top: 62px;
+}
+
+.startButton {
+  width: 235px;
+}
+
+.preview {
+  position: relative;
+  flex: 1;
+  min-height: 342px;
+  margin-top: 57px;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+  background: var(--color-border);
+  box-shadow: 0 -10px 24px rgb(0 0 0 / 25%);
+}
+
+.previewTitle {
+  margin-top: 30px;
+  margin-left: 24px;
+  color: #000;
+  font-family: var(--font-family-ui);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.bagPreview {
+  position: relative;
+  width: 246px;
+  height: 161px;
+  margin: 16px 0 0 calc(50% - 122.5px);
+}
+
+.bagImage {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  display: block;
+  width: 245.982px;
+  height: 164px;
+}
+
+.colorSwatch {
+  position: absolute;
+  top: 80px;
+  left: 175px;
+  width: 26px;
+  height: 26px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  background: #d99d48;
+}
+
+@media (max-width: 360px) {
+  .description {
+    font-size: 12px;
+    letter-spacing: -0.1px;
+  }
+}

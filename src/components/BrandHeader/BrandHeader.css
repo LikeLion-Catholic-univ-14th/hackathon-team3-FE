@@ -1,0 +1,14 @@
+.c-brand-header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: calc(11px + env(safe-area-inset-top, 0px));
+  padding-bottom: 40px;
+}
+
+.c-brand-header__logo {
+  display: block;
+  width: 53px;
+  height: 47px;
+  object-fit: cover;
+}

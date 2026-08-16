@@ -1,0 +1,8 @@
+:root {
+  --color-background: #f5f4f1;
+  --color-text-primary: #11110f;
+  --color-text-secondary: #77736d;
+  --color-border: #d9d5cf;
+  --font-family-ui: 'Inter', Arial, sans-serif;
+  --font-family-display: 'Brawler', Georgia, serif;
+}

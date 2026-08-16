@@ -1,0 +1,23 @@
+.c-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 45px;
+  border: 0;
+  border-radius: 0;
+  color: #fff;
+  background: #000;
+  font-family: var(--font-family-ui);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: normal;
+  text-align: left;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.c-primary-button:focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 4px;
+}
