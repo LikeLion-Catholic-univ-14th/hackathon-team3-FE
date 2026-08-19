@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import BackButton from '../../components/BackButton/BackButton.jsx'
+import OptionCard from '../../components/OptionCard/OptionCard.jsx'
+import PrimaryButton from '../../components/PrimaryButton/PrimaryButton.jsx'
 import backpackBeltBagSelected from '../../assets/illustrations/category-backpack-belt-bag-selected.svg'
 import backpackBeltBag from '../../assets/illustrations/category-backpack-belt-bag.svg'
 import categoryDivider from '../../assets/illustrations/category-divider.svg'
@@ -106,6 +109,12 @@ function CategoryPage() {
     )
   }
 
+  function handleContinue() {
+    if (canContinue) {
+      navigate(`/create/${sessionId}/shape`)
+    }
+  }
+
   return (
     <div className={styles.page}>
       <section className={styles.intro} aria-labelledby="category-page-title">
@@ -158,7 +167,6 @@ function CategoryPage() {
           const isSelected = selectedSilhouette === option.id
           const cardClasses = [
             styles.silhouetteCard,
-            isSelected ? styles.selectedCard : '',
             option.isWide ? styles.wideCard : '',
           ]
             .filter(Boolean)
@@ -172,11 +180,10 @@ function CategoryPage() {
             .join(' ')
 
           return (
-            <button
+            <OptionCard
               className={cardClasses}
-              type="button"
               key={option.id}
-              aria-pressed={isSelected}
+              selected={isSelected}
               onClick={() => handleSilhouetteToggle(option.id)}
             >
               <span className={styles.cardNumber}>{option.number}</span>
@@ -217,7 +224,7 @@ function CategoryPage() {
                   {option.description}
                 </span>
               </span>
-            </button>
+            </OptionCard>
           )
         })}
       </section>
@@ -230,6 +237,19 @@ function CategoryPage() {
           이후 직접 내 취향에 맞게 조율합니다.
         </p>
       </footer>
+
+      <div className={styles.actions}>
+        <PrimaryButton
+          className={styles.flowButton}
+          type="button"
+          variant="outline"
+          disabled={!canContinue}
+          onClick={handleContinue}
+        >
+          CONTINUE
+        </PrimaryButton>
+        <BackButton className={styles.flowButton} to="../choose" />
+      </div>
     </div>
   )
 }

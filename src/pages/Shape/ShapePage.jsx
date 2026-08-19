@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import BackButton from '../../components/BackButton/BackButton.jsx'
 import PrimaryButton from '../../components/PrimaryButton/PrimaryButton.jsx'
 import shapeBagDetail from '../../assets/illustrations/shape-bag-detail.svg'
 import shapeBag from '../../assets/illustrations/shape-bag.svg'
@@ -276,9 +277,14 @@ function ShapePage() {
       </div>
 
       <div className={styles.action}>
-        <PrimaryButton className={styles.continueButton} to="../lock">
+        <PrimaryButton
+          className={styles.continueButton}
+          to="../lock"
+          variant="outline"
+        >
           CONTINUE
         </PrimaryButton>
+        <BackButton className={styles.backButton} to="../category" />
       </div>
     </div>
   )

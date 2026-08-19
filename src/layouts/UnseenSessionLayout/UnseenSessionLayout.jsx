@@ -1,7 +1,7 @@
 import BrandLayout from '../BrandLayout/BrandLayout.jsx'
 
-function CreationFlowLayout() {
+function UnseenSessionLayout() {
   return <BrandLayout />
 }
 
-export default CreationFlowLayout
+export default UnseenSessionLayout

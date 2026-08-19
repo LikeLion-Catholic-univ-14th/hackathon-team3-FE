@@ -1,18 +1,9 @@
-import { useNavigate } from 'react-router-dom'
 import BrandHeader from '../../components/BrandHeader/BrandHeader.jsx'
 import PrimaryButton from '../../components/PrimaryButton/PrimaryButton.jsx'
 import homeBag from '../../assets/illustrations/home-bag.svg'
 import styles from './HomePage.module.css'
 
 function HomePage() {
-  const navigate = useNavigate()
-
-  function handleStartCreating() {
-    const sessionId = crypto.randomUUID()
-
-    navigate(`/create/${sessionId}/category`)
-  }
-
   return (
     <div className={styles.page}>
       <BrandHeader />
@@ -34,7 +25,7 @@ function HomePage() {
         <div className={styles.action}>
           <PrimaryButton
             className={styles.startButton}
-            onClick={handleStartCreating}
+            to="/create/registration"
           >
             START CREATING
           </PrimaryButton>
