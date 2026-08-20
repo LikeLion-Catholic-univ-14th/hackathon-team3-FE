@@ -1,0 +1,20 @@
+.c-option-card {
+  padding: 0;
+  border: 1px solid var(--color-text-secondary);
+  border-radius: 0;
+  color: #000;
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.c-option-card.c-option-card--selected {
+  color: #fff;
+  background: #000;
+}
+
+.c-option-card:focus-visible {
+  z-index: 1;
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 2px;
+}

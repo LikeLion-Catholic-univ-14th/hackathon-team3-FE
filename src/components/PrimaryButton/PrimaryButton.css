@@ -1,0 +1,36 @@
+.c-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 45px;
+  border-radius: 0;
+  font-family: var(--font-family-ui);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: normal;
+  text-align: left;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.c-primary-button--solid {
+  border: 0;
+  color: #fff;
+  background: #000;
+}
+
+.c-primary-button--outline {
+  border: 1px solid #000;
+  color: #000;
+  background: #fff;
+}
+
+.c-primary-button:disabled {
+  cursor: not-allowed;
+}
+
+.c-primary-button:focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 4px;
+}

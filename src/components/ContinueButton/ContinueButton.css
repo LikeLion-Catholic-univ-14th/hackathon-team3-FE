@@ -1,0 +1,5 @@
+.c-continue-button:hover:not(:disabled) {
+  border-color: #000;
+  color: #fff;
+  background: #000;
+}

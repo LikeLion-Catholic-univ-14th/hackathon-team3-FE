@@ -1,0 +1,374 @@
+.page {
+  position: relative;
+  width: 100%;
+  max-width: 393px;
+  min-height: 810px;
+  margin: 0 auto;
+  padding-bottom: 9px;
+  overflow: hidden;
+  background: var(--color-background);
+}
+
+.confetti {
+  position: absolute;
+  top: 31px;
+  width: 38.6px;
+  height: 38.6px;
+  background: #c79a73;
+  -webkit-mask: var(--confirmation-confetti-mask) center / contain no-repeat;
+  mask: var(--confirmation-confetti-mask) center / contain no-repeat;
+}
+
+.confettiLeft {
+  left: 87.08px;
+  transform: scaleX(-1);
+}
+
+.confettiRight {
+  left: 267.31px;
+}
+
+.closeButton {
+  position: absolute;
+  z-index: 1;
+  top: 31px;
+  right: 23px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.closeButton img {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.closeButton:focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 4px;
+}
+
+.summary {
+  margin-top: 3px;
+  text-align: center;
+}
+
+.eyebrow,
+.title,
+.description,
+.ticketTitle,
+.fieldLabel,
+.fieldValue,
+.address,
+.unseenNumber {
+  margin: 0;
+}
+
+.eyebrow {
+  color: #f99a3b;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.title {
+  margin-top: 11px;
+  color: #000;
+  font-family: var(--font-family-display);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 37px;
+  letter-spacing: -1.8px;
+  white-space: nowrap;
+}
+
+.description {
+  margin-top: 16px;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  white-space: nowrap;
+}
+
+.ticket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 362px;
+  height: 353px;
+  margin: 21px auto 0;
+  padding: 24px 0 0;
+  gap: 12px;
+  overflow: hidden;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.ticketTitle {
+  height: 22px;
+  color: #000;
+  font-size: 0;
+  line-height: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ticketTitle strong {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.ticketStatus {
+  color: #b86f26;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.ticketDivider {
+  flex: 0 0 auto;
+  width: 340px;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.appointmentInfo {
+  flex: 0 0 auto;
+  width: 399px;
+  height: 119px;
+  padding: 0 31px;
+  color: #000;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.infoTopRow,
+.infoBottomRow {
+  display: flex;
+  align-items: flex-start;
+  width: 337px;
+}
+
+.infoTopRow {
+  gap: 68px;
+  height: 85px;
+}
+
+.infoBottomRow {
+  gap: 72px;
+  height: 34px;
+}
+
+.guestField,
+.dateField {
+  flex: 0 0 107px;
+  width: 107px;
+}
+
+.locationField {
+  flex: 0 0 162px;
+  width: 162px;
+}
+
+.locationField .fieldValue {
+  white-space: normal;
+}
+
+.timeField {
+  flex: 0 0 72px;
+  width: 72px;
+}
+
+.fieldLabel,
+.address {
+  font-weight: 500;
+}
+
+.fieldValue {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.timeValue {
+  color: #b86f26;
+}
+
+.barcodePanel {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  width: 325px;
+  height: 88px;
+  padding: 7px 75px;
+  border-radius: 10px;
+  background: #e6e0cc;
+}
+
+.barcodeRow {
+  display: flex;
+  width: 175px;
+  height: 57px;
+  gap: 2px;
+}
+
+.barcodeRow img {
+  display: block;
+  flex: 0 0 57px;
+  width: 57px;
+  height: 57px;
+}
+
+.unseenNumber {
+  width: 175px;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.downloadButton {
+  display: block;
+  flex: 0 0 auto;
+  width: 30.325px;
+  height: 30.325px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.downloadIcon {
+  display: block;
+  width: 30.325px;
+  height: 30.325px;
+}
+
+.downloadButton:focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 4px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  width: 362px;
+  margin: 46px auto 0;
+  gap: 18px;
+}
+
+.calendarButton,
+.homeButton {
+  width: 362px;
+  height: 56px;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.calendarButton {
+  border: 1px solid #000;
+  font-weight: 600;
+}
+
+.homeButton {
+  font-weight: 500;
+}
+
+@media (max-width: 392px) {
+  .confettiLeft {
+    left: calc(100vw * 87.08 / 393);
+  }
+
+  .confettiRight {
+    left: calc(100vw * 267.31 / 393);
+  }
+
+  .eyebrow {
+    font-size: calc(100vw * 20 / 393);
+  }
+
+  .title {
+    font-size: calc(100vw * 30 / 393);
+    letter-spacing: calc(100vw * -1.8 / 393);
+  }
+
+  .description {
+    font-size: calc(100vw * 14 / 393);
+  }
+
+  .ticket,
+  .actions,
+  .calendarButton,
+  .homeButton {
+    width: calc(100% * 362 / 393);
+  }
+
+  .ticketTitle strong {
+    font-size: calc(100vw * 16 / 393);
+  }
+
+  .ticketStatus {
+    font-size: calc(100vw * 13 / 393);
+  }
+
+  .ticketDivider {
+    width: calc(100% * 340 / 362);
+  }
+
+  .appointmentInfo {
+    width: calc(100vw * 399 / 393);
+    padding-right: calc(100vw * 31 / 393);
+    padding-left: calc(100vw * 31 / 393);
+    font-size: calc(100vw * 14 / 393);
+  }
+
+  .infoTopRow,
+  .infoBottomRow {
+    width: calc(100vw * 337 / 393);
+  }
+
+  .infoTopRow {
+    gap: calc(100vw * 68 / 393);
+  }
+
+  .infoBottomRow {
+    gap: calc(100vw * 72 / 393);
+  }
+
+  .guestField,
+  .dateField {
+    flex-basis: calc(100vw * 107 / 393);
+    width: calc(100vw * 107 / 393);
+  }
+
+  .locationField {
+    flex-basis: calc(100vw * 162 / 393);
+    width: calc(100vw * 162 / 393);
+  }
+
+  .timeField {
+    flex-basis: calc(100vw * 72 / 393);
+    width: calc(100vw * 72 / 393);
+  }
+
+  .barcodePanel {
+    width: calc(100% * 325 / 362);
+  }
+
+  .calendarButton,
+  .homeButton {
+    font-size: calc(100vw * 20 / 393);
+  }
+}

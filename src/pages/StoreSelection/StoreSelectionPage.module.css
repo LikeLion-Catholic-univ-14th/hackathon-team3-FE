@@ -1,0 +1,209 @@
+.page {
+  width: 100%;
+  max-width: 393px;
+  min-height: 702.031px;
+  margin: -10px auto 0;
+  padding-bottom: 31px;
+  background: var(--color-background);
+}
+
+.intro {
+  padding-left: 16px;
+}
+
+.step,
+.title,
+.description,
+.storeName,
+.storeAddress {
+  margin: 0;
+}
+
+.step {
+  width: 308px;
+  max-width: 100%;
+  color: #000;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.title {
+  width: 308px;
+  max-width: 100%;
+  margin-top: 10px;
+  color: #000;
+  font-family: var(--font-family-display);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 37px;
+  letter-spacing: -3px;
+}
+
+.description {
+  margin-top: 11.131px;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.52px;
+  white-space: nowrap;
+}
+
+.storeList {
+  display: flex;
+  flex-direction: column;
+  gap: 11.951px;
+  margin: 18.162px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.statusCard {
+  display: flex;
+  align-items: center;
+  width: 337.88px;
+  min-height: 66px;
+  margin-left: 27.233px;
+  padding: 10px 16px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  color: var(--color-text-secondary);
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.storeCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 337.88px;
+  height: 66px;
+  margin-left: 27.233px;
+  padding: 10px 16px 10px 10px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  color: #000;
+  background: #fff;
+}
+
+.storeCard:global(.c-option-card--selected) {
+  color: #000;
+  background: #fff;
+}
+
+.storeText {
+  display: flex;
+  flex: 0 0 272px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 272px;
+  line-height: normal;
+}
+
+.storeName {
+  width: 100%;
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.storeAddress {
+  width: 100%;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.checkBox {
+  display: flex;
+  flex: 0 0 19.88px;
+  align-items: center;
+  justify-content: center;
+  width: 19.88px;
+  height: 19.88px;
+  padding: 3px;
+  overflow: hidden;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.checkIcon {
+  display: block;
+  width: 11.88px;
+  height: 11.88px;
+  object-fit: cover;
+}
+
+.checkBoxSelected {
+  padding: 4px;
+  border: 0;
+  border-radius: 3px;
+  background: #b86f26;
+}
+
+.selectedCheckIcon {
+  display: block;
+  width: 11.88px;
+  height: 11.88px;
+  background: #f5f4f1;
+  mask: var(--store-selected-check-icon) center / 100% 100% no-repeat;
+  -webkit-mask: var(--store-selected-check-icon) center / 100% 100% no-repeat;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-top: 92.854px;
+  padding: 0 32px 0 33px;
+}
+
+.flowButton {
+  width: 100%;
+  height: 52px;
+}
+
+@media (max-width: 392px) {
+  .title {
+    font-size: calc(100vw * 30 / 393);
+    letter-spacing: calc(100vw * -3 / 393);
+  }
+
+  .description {
+    font-size: calc(100vw * 13 / 393);
+    letter-spacing: calc(100vw * 0.52 / 393);
+  }
+
+  .storeCard {
+    width: calc(100% - 55px);
+    margin-left: 6.93%;
+    gap: 8px;
+    padding-right: 10px;
+  }
+
+  .statusCard {
+    width: calc(100% - 55px);
+    margin-left: 6.93%;
+  }
+
+  .storeText {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+  }
+
+  .storeName {
+    font-size: calc(100vw * 18 / 393);
+  }
+
+  .storeAddress {
+    font-size: calc(100vw * 13 / 393);
+  }
+}

@@ -1,0 +1,21 @@
+.c-brand-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: calc(10px + env(safe-area-inset-top, 0px));
+  padding-bottom: 35.41px;
+}
+
+.c-brand-header__mark {
+  display: block;
+  width: 109.778px;
+  height: 54.842px;
+}
+
+.c-brand-header__divider {
+  display: block;
+  width: 197.075px;
+  height: 1px;
+  margin-top: 16.748px;
+}

@@ -1,0 +1,194 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 393px;
+  min-height: 692px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  background: var(--color-background);
+}
+
+.intro {
+  margin: 0 19px;
+}
+
+.eyebrow,
+.title {
+  margin: 0;
+}
+
+.eyebrow {
+  width: 193px;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-ui);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 12px;
+  letter-spacing: 0.7px;
+  white-space: nowrap;
+}
+
+.title {
+  width: 275px;
+  margin-top: 21px;
+  color: #000;
+  font-family: var(--font-family-display);
+  font-size: 37px;
+  font-weight: 700;
+  line-height: 45px;
+  letter-spacing: -3.7px;
+  white-space: nowrap;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 359px;
+  height: 169.149px;
+  margin: 25.911px auto 0;
+}
+
+.field {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 25.05px;
+}
+
+.fieldLabel,
+.genderOption {
+  color: #000;
+  font-family: 'Baskervville', var(--font-family-ui);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: -1.5px;
+  white-space: nowrap;
+}
+
+.textInput {
+  flex: none;
+  width: 166.299px;
+  height: 25.05px;
+  padding: 0 6px;
+  border: 0.6px solid #000;
+  border-radius: 5px;
+  outline-offset: 2px;
+  background: #fff;
+  color: #000;
+  font-family: var(--font-family-ui);
+  font-size: 13px;
+}
+
+.genderField {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 19px;
+}
+
+.genderOptions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 196px;
+  height: 19px;
+}
+
+.genderOption {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 19px;
+  cursor: pointer;
+}
+
+.genderOption:first-child {
+  width: 96px;
+}
+
+.genderOption:last-child {
+  width: 85px;
+  gap: 8px;
+}
+
+.genderInput {
+  flex: none;
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  appearance: none;
+  border: 0.6px solid #000;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.genderInput:checked {
+  background: #000;
+  box-shadow: inset 0 0 0 4px #fff;
+}
+
+.curationPanel {
+  position: relative;
+  flex: none;
+  width: 393px;
+  height: 320px;
+  margin-top: 53.941px;
+  overflow: hidden;
+  border: 2px solid #000;
+  border-radius: 20px 20px 0 0;
+  background-image: linear-gradient(
+    142.9508deg,
+    #ffedd9 25.894%,
+    rgb(228 122 0 / 56%) 123.47%
+  );
+  box-shadow: 0 -7px 20px rgb(0 0 0 / 25%);
+}
+
+.curationBag {
+  position: absolute;
+  top: 3.97px;
+  left: 53.156px;
+  display: block;
+  width: 283.036px;
+  height: 306.528px;
+  object-fit: cover;
+  filter: blur(10px);
+}
+
+.submitButton {
+  position: absolute;
+  z-index: 1;
+  top: 122px;
+  left: 50%;
+  width: 240px;
+  height: 72px;
+  padding: 0;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  font-family: var(--font-family-display);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: -2.4px;
+}
+
+@media (max-width: 392px) {
+  .page {
+    min-width: 320px;
+  }
+
+  .fields {
+    width: calc(100% - 34px);
+  }
+
+  .curationPanel {
+    width: 100%;
+  }
+}
