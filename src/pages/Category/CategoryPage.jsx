@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import BackButton from '../../components/BackButton/BackButton.jsx'
+import ContinueButton from '../../components/ContinueButton/ContinueButton.jsx'
 import OptionCard from '../../components/OptionCard/OptionCard.jsx'
-import PrimaryButton from '../../components/PrimaryButton/PrimaryButton.jsx'
 import backpackBeltBagSelected from '../../assets/illustrations/category-backpack-belt-bag-selected.svg'
 import backpackBeltBag from '../../assets/illustrations/category-backpack-belt-bag.svg'
 import categoryDivider from '../../assets/illustrations/category-divider.svg'
@@ -14,9 +14,14 @@ import shoulderCrossbodyStrapSelected from '../../assets/illustrations/category-
 import shoulderCrossbodyStrap from '../../assets/illustrations/category-shoulder-crossbody-strap.svg'
 import topHandleSelected from '../../assets/illustrations/category-top-handle-selected.svg'
 import topHandle from '../../assets/illustrations/category-top-handle.svg'
+import useCreationFlow from '../../hooks/useCreationFlow.js'
 import styles from './CategoryPage.module.css'
 
 const purposeOptions = ['DAILY', 'WORK', 'TRAVEL', 'WEEKEND']
+
+function getContextValue(purpose) {
+  return `${purpose.charAt(0)}${purpose.slice(1).toLowerCase()}`
+}
 
 const silhouetteOptions = [
   {
@@ -72,8 +77,9 @@ const silhouetteOptions = [
 function CategoryPage() {
   const navigate = useNavigate()
   const { sessionId } = useParams()
-  const [selectedPurpose, setSelectedPurpose] = useState(null)
-  const [selectedSilhouette, setSelectedSilhouette] = useState(null)
+  const { state, updatePreferences } = useCreationFlow()
+  const { purpose: selectedPurpose, silhouette: selectedSilhouette } =
+    state.preferences
   const canContinue = Boolean(selectedPurpose && selectedSilhouette)
 
   useEffect(() => {
@@ -98,15 +104,19 @@ function CategoryPage() {
   }, [canContinue, navigate, sessionId])
 
   function handlePurposeToggle(purpose) {
-    setSelectedPurpose((currentPurpose) =>
-      currentPurpose === purpose ? null : purpose,
-    )
+    const nextPurpose = selectedPurpose === purpose ? null : purpose
+
+    updatePreferences({
+      purpose: nextPurpose,
+      contexts: nextPurpose ? [getContextValue(nextPurpose)] : [],
+    })
   }
 
   function handleSilhouetteToggle(silhouetteId) {
-    setSelectedSilhouette((currentSilhouette) =>
-      currentSilhouette === silhouetteId ? null : silhouetteId,
-    )
+    updatePreferences({
+      silhouette:
+        selectedSilhouette === silhouetteId ? null : silhouetteId,
+    })
   }
 
   function handleContinue() {
@@ -239,15 +249,12 @@ function CategoryPage() {
       </footer>
 
       <div className={styles.actions}>
-        <PrimaryButton
+        <ContinueButton
           className={styles.flowButton}
           type="button"
-          variant="outline"
           disabled={!canContinue}
           onClick={handleContinue}
-        >
-          CONTINUE
-        </PrimaryButton>
+        />
         <BackButton className={styles.flowButton} to="../choose" />
       </div>
     </div>

@@ -1,23 +1,20 @@
 .page {
   width: 100%;
   max-width: 393px;
-  min-height: 1260px;
+  min-height: 1484px;
   margin: 0 auto;
-  overflow: visible;
+  overflow-x: hidden;
   background: var(--color-background);
+}
+
+.completedPage {
+  min-height: 1596px;
 }
 
 .preview {
   position: relative;
-  z-index: 1;
-  isolation: isolate;
-  width: 100vw;
-  height: 419px;
-  margin-left: calc(50% - 50vw);
-  margin-top: -19px;
-  border-top: 1px solid #c5c1bb;
-  border-bottom: 1px solid #c5c1bb;
-  background: #efe8dd;
+  width: 100%;
+  height: 405px;
 }
 
 .stepLabel,
@@ -26,15 +23,15 @@
 .title,
 .description,
 .controlName,
-.controlValue {
-  margin-bottom: 0;
+.binaryTitle,
+.selectionLabel {
+  margin: 0;
 }
 
 .stepLabel {
   position: absolute;
-  top: 18px;
+  top: 0;
   left: 19px;
-  margin-top: 0;
   color: var(--color-text-primary);
   font-family: var(--font-family-ui);
   font-size: 10px;
@@ -44,11 +41,15 @@
   white-space: nowrap;
 }
 
+.controlName,
+.selectionLabel {
+  width: max-content;
+}
+
 .previewInstruction {
   position: absolute;
-  top: 41px;
+  top: 23px;
   left: 19px;
-  margin-top: 0;
   color: var(--color-text-secondary);
   font-family: var(--font-family-ui);
   font-size: 10px;
@@ -57,13 +58,25 @@
   white-space: nowrap;
 }
 
-.bagStage {
+.previewCard {
   position: absolute;
-  top: 140px;
+  top: 61.93px;
   left: 50%;
+  width: 341.286px;
+  height: 303.3px;
+  border: 1px solid #482905;
+  border-radius: 5px;
+  background: #fff;
+  transform: translateX(-50%);
+}
+
+.bagVisual {
+  position: absolute;
+  top: 122px;
+  left: 74px;
   width: 245.982px;
   height: 161px;
-  transform: translateX(-50%);
+  filter: blur(6px);
 }
 
 .bagImage {
@@ -102,12 +115,23 @@
   background: #d99d48;
 }
 
+.previewQuestion {
+  position: absolute;
+  top: 195.49px;
+  left: 50%;
+  color: #fff;
+  font-family: var(--font-family-ui);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: normal;
+  transform: translateX(-50%);
+}
+
 .intro {
-  margin: 21px 27px 0;
+  margin: 0 27px;
 }
 
 .eyebrow {
-  margin-top: 0;
   color: var(--color-text-secondary);
   font-family: var(--font-family-ui);
   font-size: 10px;
@@ -129,83 +153,74 @@
 }
 
 .description {
-  margin-top: 32px;
+  margin-top: 27px;
   color: var(--color-text-secondary);
   font-family: var(--font-family-ui);
   font-size: 13px;
   font-weight: 400;
-  line-height: 100.1%;
+  line-height: 18px;
   white-space: nowrap;
 }
 
 .controls {
-  width: calc(100% - 51px);
-  height: 506px;
-  margin-top: 71px;
-  margin-left: 27px;
+  width: 343px;
+  margin: 26px auto 0;
 }
 
-.rangeControl,
-.colorControl,
-.attitudeControl {
-  position: relative;
-  width: 100%;
+.rangeGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
 }
 
 .rangeControl {
-  height: 127px;
-}
-
-.colorControl {
-  height: 131px;
-}
-
-.attitudeControl {
-  height: 121px;
+  position: relative;
+  width: 343px;
+  height: 68.523px;
 }
 
 .controlHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: calc(100% - 1px);
-  color: #000;
-  font-size: 13px;
-  line-height: 13.013px;
+  width: 343px;
+}
+
+.controlValue {
+  color: #482905;
+  font-family: var(--font-family-display);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14.014px;
   white-space: nowrap;
 }
 
-.controlName {
-  margin-top: 0;
+.controlName,
+.binaryTitle,
+.selectionLabel {
+  color: #000;
   font-family: var(--font-family-ui);
   font-size: 13px;
   font-weight: 400;
   line-height: 13.013px;
+  white-space: nowrap;
 }
 
-.controlValue {
-  margin-top: 0;
-  font-family: var(--font-family-display);
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 13.013px;
-}
-
-.rangeTrack {
+.rangeScale {
   position: absolute;
-  top: 42px;
+  top: 37.013px;
   left: 0;
-  width: calc(100% - 2px);
-  height: 20px;
+  width: 340px;
+  height: 31.51px;
   touch-action: none;
 }
 
 .trackImage {
   position: absolute;
-  top: 10px;
+  top: 10.5px;
   left: 0;
   display: block;
-  width: 100%;
+  width: 340px;
   height: 1px;
 }
 
@@ -223,8 +238,8 @@
   position: absolute;
   z-index: 1;
   top: 0;
-  left: -10px;
-  width: calc(100% + 20px);
+  left: 0;
+  width: 340px;
   height: 20px;
   margin: 0;
   opacity: 0;
@@ -239,11 +254,11 @@
 
 .rangeLabels {
   position: absolute;
-  top: 63px;
+  top: 21.5px;
   left: 0;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 342px;
   color: var(--color-text-secondary);
   font-family: var(--font-family-ui);
   font-size: 10px;
@@ -252,29 +267,54 @@
   white-space: nowrap;
 }
 
-.controlDivider,
-.colorDivider {
+.colorControl {
+  position: relative;
+  width: 343px;
+  height: 78.5px;
+  margin-top: 52px;
+}
+
+.signatureLabel {
   position: absolute;
-  top: 103px;
-  display: block;
-  width: calc(100% - 2px);
-  height: 1px;
+  top: 0;
+  left: 274.4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 68.6px;
+  color: #000;
+  text-align: center;
+  white-space: nowrap;
 }
 
-.controlDivider {
-  left: 1px;
+.signatureLabel span {
+  font-family: var(--font-family-display);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 13.013px;
 }
 
-.colorDivider {
-  left: 2px;
+.signatureLabel small {
+  margin-top: 4.987px;
+  font-family: var(--font-family-ui);
+  font-size: 8.5px;
+  font-weight: 400;
+  line-height: 8.508px;
+}
+
+.selectedSignatureLabel span {
+  color: #482905;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14.014px;
 }
 
 .swatchList {
   position: absolute;
-  top: 37px;
-  left: 2px;
+  top: 38.5px;
+  left: 1.01px;
   display: flex;
-  gap: 15px;
+  gap: 15.127px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -282,14 +322,20 @@
 
 .swatch {
   position: relative;
-  width: 40px;
+  flex: none;
+  width: 40.353px;
   height: 40px;
+}
+
+.signatureSwatch {
+  margin-top: -1.5px;
+  margin-left: 12.11px;
 }
 
 .swatchOption {
   position: relative;
   display: block;
-  width: 40px;
+  width: 40.353px;
   height: 40px;
   cursor: pointer;
 }
@@ -298,7 +344,7 @@
   position: absolute;
   z-index: 1;
   inset: 0;
-  width: 40px;
+  width: 40.353px;
   height: 40px;
   margin: 0;
   opacity: 0;
@@ -315,24 +361,153 @@
   position: absolute;
   inset: 0;
   display: block;
-  width: 40px;
+  width: 40.353px;
   height: 40px;
 }
 
 .swatchColor {
   position: absolute;
   top: 6px;
-  left: 6px;
+  left: 6.05px;
   display: block;
-  width: 28px;
+  width: 28.246px;
   height: 28px;
 }
 
-.summary {
+.binaryChoice {
+  width: 344px;
+  margin: 64px auto 0;
+}
+
+.binaryOptions {
   display: flex;
-  gap: 79px;
-  margin-left: 28px;
-  color: var(--color-text-secondary);
+  width: 343.002px;
+  height: 38.54px;
+  margin-top: 20px;
+}
+
+.binaryOption {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 171.891px;
+  height: 38.54px;
+  margin: 0;
+  padding: 0;
+  border: 0.8px solid #482905;
+  color: #000;
+  background: #fff;
+  font-family: var(--font-family-ui);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 13.013px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.binaryOption + .binaryOption {
+  margin-left: -0.781px;
+}
+
+.binaryOption:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+.selectedBinaryOption {
+  color: #fff;
+  background: #000;
+}
+
+.monogramChoice {
+  margin-top: 43.447px;
+}
+
+.monogramChoice .binaryChoice {
+  margin-top: 0;
+}
+
+.selection {
+  position: relative;
+  width: 339.177px;
+  min-height: 13.013px;
+  margin-top: 46.447px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.selectionLabel {
+  margin-left: 2.09px;
+}
+
+.selectionLoader {
+  position: absolute;
+  top: 28.733px;
+  left: 50%;
+  display: block;
+  width: 28.456px;
+  height: 28.571px;
+  transform: translateX(-50%);
+}
+
+.selectionLoader > img {
+  position: absolute;
+  top: 3.22px;
+  left: 2.83px;
+  display: block;
+  width: 22.64px;
+  height: 22.64px;
+}
+
+.selectionLoaderAccent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: selection-loader-spin 800ms linear infinite;
+}
+
+.selectionLoaderAccent img {
+  display: block;
+  width: 22.276px;
+  height: 22.464px;
+}
+
+.completedSelection {
+  min-height: 85px;
+  margin-top: 43.447px;
+}
+
+.selectionRows {
+  position: absolute;
+  top: 29.5px;
+  left: 5.09px;
+  display: flex;
+  flex-direction: column;
+  gap: 11.5px;
+}
+
+.selectionRow {
+  display: flex;
+  gap: 10.95px;
+}
+
+.selectionChip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 22px;
+  padding: 0 5px;
+  overflow: hidden;
+  border: 1px solid #482905;
+  border-radius: 5px;
+  color: #482905;
+  background: var(--color-background);
   font-family: var(--font-family-ui);
   font-size: 13px;
   font-weight: 400;
@@ -340,40 +515,149 @@
   white-space: nowrap;
 }
 
+.selectionRow:first-child .selectionChip:nth-child(1) {
+  min-width: 85px;
+}
+
+.selectionRow:first-child .selectionChip:nth-child(2) {
+  min-width: 75px;
+}
+
+.selectionRow:first-child .selectionChip:nth-child(3),
+.selectionRow:first-child .selectionChip:nth-child(4) {
+  min-width: 68px;
+}
+
+.selectionRow:nth-child(2) .selectionChip:first-child {
+  min-width: 69px;
+}
+
+.selectionRow:nth-child(2) .selectionChip:nth-child(2) {
+  min-width: 123px;
+}
+
 .action {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin: 20px 27px 0;
-  padding-bottom: 12px;
+  gap: 15.088px;
+  width: 339.177px;
+  margin: 64.487px auto 0;
+  padding-bottom: 24.588px;
 }
 
-.continueButton,
+.completedAction {
+  margin-top: 38.5px;
+  padding-bottom: 27.588px;
+}
+
+.flowButton,
 .backButton {
-  width: 100%;
+  width: 339.177px;
   height: 50.912px;
-  padding: 0 45px;
+  padding: 0;
   border-color: var(--color-text-secondary);
+  font-family: var(--font-family-ui);
   font-size: 14px;
   font-weight: 400;
   line-height: 15px;
 }
 
+@keyframes selection-loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .selectionLoaderAccent {
+    animation: none;
+  }
+}
+
+@media (max-width: 392px) {
+  .previewCard {
+    width: calc(100% - 52px);
+  }
+
+  .bagVisual {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .controls,
+  .rangeControl,
+  .controlHeader,
+  .colorControl,
+  .binaryChoice {
+    width: calc(100% - 50px);
+  }
+
+  .rangeScale,
+  .trackImage,
+  .rangeInput {
+    width: calc(100% - 3px);
+  }
+
+  .rangeLabels,
+  .binaryOptions {
+    width: 100%;
+  }
+
+  .signatureLabel {
+    right: 0;
+    left: auto;
+  }
+
+  .swatchList {
+    right: 0;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .signatureSwatch {
+    margin-left: 0;
+  }
+
+  .binaryOption {
+    width: calc(50% + 0.39px);
+  }
+
+  .selection,
+  .action,
+  .flowButton,
+  .backButton {
+    width: calc(100% - 54px);
+  }
+
+  .selectionRows {
+    right: 5.09px;
+  }
+
+  .selectionRow:first-child {
+    justify-content: space-between;
+  }
+}
+
 @media (max-width: 360px) {
   .title {
     font-size: 28px;
-    line-height: 34px;
     letter-spacing: -1.68px;
   }
 
   .description {
-    margin-top: 36px;
     font-size: 12px;
   }
 
-  .summary {
-    justify-content: space-between;
-    gap: 0;
-    margin-right: 28px;
+  .swatch,
+  .swatchOption,
+  .swatchInput,
+  .swatchBorder {
+    width: 38px;
+    height: 38px;
+  }
+
+  .swatchColor {
+    top: 5px;
+    left: 5px;
   }
 }

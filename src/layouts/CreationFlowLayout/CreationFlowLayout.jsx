@@ -1,7 +1,0 @@
-import BrandLayout from '../BrandLayout/BrandLayout.jsx'
-
-function CreationFlowLayout() {
-  return <BrandLayout />
-}
-
-export default CreationFlowLayout

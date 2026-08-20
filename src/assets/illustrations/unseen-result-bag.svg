@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="102" height="66" viewBox="0 0 102 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 1">
+<path id="Rectangle 2" d="M10.3848 17.2937H91.6152C96.719 17.2937 100.801 21.5334 100.608 26.6335L99.4873 56.3396C99.3047 61.1745 95.3316 64.9997 90.4932 64.9997H11.5068C6.66844 64.9997 2.6953 61.1745 2.5127 56.3396L1.3916 26.6335C1.19898 21.5334 5.28102 17.2937 10.3848 17.2937Z" fill="#E88B2E" stroke="black" stroke-width="2"/>
+<path id="Vector 1" d="M0.625766 28.7202H101.374" stroke="black" stroke-width="2"/>
+<path id="Line 1" d="M30.6852 16.3044C38.2171 -0.161514 61.4458 -2.66389 71.3224 16.3043" stroke="black" stroke-width="6" stroke-linecap="round"/>
+<line id="Line 2" x1="3" y1="-3" x2="25.8448" y2="-3" transform="matrix(-0.336261 0.941769 -0.956606 -0.291385 9.69938 25.2524)" stroke="black" stroke-width="6" stroke-linecap="round"/>
+<line id="Line 3" x1="3" y1="-3" x2="25.8448" y2="-3" transform="matrix(0.336261 0.941769 0.956606 -0.291385 92.3006 25.2524)" stroke="black" stroke-width="6" stroke-linecap="round"/>
+</g>
+</svg>

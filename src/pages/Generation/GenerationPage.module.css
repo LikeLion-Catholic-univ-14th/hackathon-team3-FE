@@ -1,0 +1,123 @@
+.page {
+  position: relative;
+  width: 100%;
+  min-height: max(852px, 100dvh);
+  overflow: hidden;
+  background: #11110f;
+}
+
+.artwork {
+  position: absolute;
+  top: 265px;
+  left: calc(50% - 160.5px);
+  width: 322px;
+  height: 322px;
+}
+
+.outerRing {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 322px;
+  height: 322px;
+}
+
+.innerRing {
+  position: absolute;
+  top: 77.75px;
+  left: 77.75px;
+  z-index: 2;
+  display: block;
+  width: 166.5px;
+  height: 166.5px;
+  opacity: 0;
+}
+
+.waveRing {
+  position: absolute;
+  top: 77.75px;
+  left: 77.75px;
+  z-index: 1;
+  display: block;
+  width: 166.5px;
+  height: 166.5px;
+  transform-origin: center;
+  animation: inner-ring-wave 2.5s ease-out infinite;
+}
+
+.bagFrame {
+  position: absolute;
+  top: 112px;
+  left: 89px;
+  z-index: 3;
+  display: block;
+  width: 144px;
+  height: 97px;
+}
+
+.bag {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  display: block;
+  width: 144px;
+  height: 100px;
+}
+
+.title {
+  position: absolute;
+  top: 661px;
+  left: calc(50% - 186.5px);
+  width: 373px;
+  margin: 0;
+  color: #fff;
+  font-family: var(--font-family-display);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -2.8px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.progress {
+  position: absolute;
+  top: 718px;
+  left: 50%;
+  margin: 0;
+  color: #b8b8b8;
+  font-family: var(--font-family-ui);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 1.7px;
+  text-align: center;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+@keyframes inner-ring-wave {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.9339);
+  }
+}
+
+@media (max-width: 392px) {
+  .title {
+    left: 10px;
+    width: calc(100% - 20px);
+    font-size: calc(100vw * 28 / 393);
+    letter-spacing: calc(100vw * -2.8 / 393);
+  }
+}

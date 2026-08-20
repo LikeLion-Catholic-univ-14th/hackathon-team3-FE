@@ -1,9 +1,8 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import BackButton from '../../components/BackButton/BackButton.jsx'
 import OptionCard from '../../components/OptionCard/OptionCard.jsx'
 import PrimaryButton from '../../components/PrimaryButton/PrimaryButton.jsx'
 import shapeBag from '../../assets/illustrations/shape-bag.svg'
+import useCreationFlow from '../../hooks/useCreationFlow.js'
 import styles from './LockPage.module.css'
 
 const lockOptions = [
@@ -14,17 +13,10 @@ const lockOptions = [
 ]
 
 function LockPage() {
-  const navigate = useNavigate()
-  const [selectedOptionId, setSelectedOptionId] = useState('color')
-  const selectedOption =
-    lockOptions.find((option) => option.id === selectedOptionId) ??
-    lockOptions[1]
-
-  function handleBringToLife() {
-    const unseenId = crypto.randomUUID()
-
-    navigate(`/unseen/${unseenId}`)
-  }
+  const { state, updatePreferences } = useCreationFlow()
+  const selectedOption = lockOptions.find(
+    (option) => option.label === state.preferences.lockedAttribute,
+  )
 
   return (
     <div className={styles.page}>
@@ -42,14 +34,16 @@ function LockPage() {
 
       <div className={styles.optionGrid} aria-label="Lock options">
         {lockOptions.map((option) => {
-          const isSelected = selectedOptionId === option.id
+          const isSelected = selectedOption?.id === option.id
 
           return (
             <OptionCard
               className={styles.option}
               key={option.id}
               selected={isSelected}
-              onClick={() => setSelectedOptionId(option.id)}
+              onClick={() =>
+                updatePreferences({ lockedAttribute: option.label })
+              }
             >
               <span className={styles.optionNumber}>{option.number}</span>
               <span className={styles.optionLabel}>{option.label}</span>
@@ -61,9 +55,8 @@ function LockPage() {
       <div className={styles.action}>
         <PrimaryButton
           className={styles.bringToLifeButton}
-          type="button"
+          to="../generating"
           variant="outline"
-          onClick={handleBringToLife}
         >
           BRING IT TO LIFE
         </PrimaryButton>
@@ -82,7 +75,8 @@ function LockPage() {
         </div>
 
         <div className={styles.lockedBadge} aria-live="polite">
-          LOCKED / {selectedOption.label.toUpperCase()}
+          LOCKED /
+          {selectedOption ? ` ${selectedOption.label.toUpperCase()}` : ''}
         </div>
       </section>
 

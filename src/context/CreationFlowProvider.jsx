@@ -29,6 +29,9 @@ function CreationFlowProvider({ children }) {
     updatePreferences(values) {
       dispatch({ type: 'updatePreferences', values })
     },
+    updateShapeSelection({ controls = {}, preferences = {} }) {
+      dispatch({ type: 'updateShapeSelection', controls, preferences })
+    },
     setIntent(intent) {
       dispatch({ type: 'setIntent', intent })
     },

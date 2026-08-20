@@ -18,7 +18,7 @@
 
 .eyebrow {
   margin-top: 0;
-  color: var(--color-text-secondary);
+  color: #000;
   font-family: var(--font-family-ui);
   font-size: 10px;
   font-weight: 500;
@@ -115,31 +115,42 @@
 }
 
 .action {
+  width: 340px;
   margin-top: 28px;
   margin-left: 27px;
 }
 
 .bringToLifeButton {
-  width: 230px;
-  height: 57px;
+  width: 340px;
+  height: 59px;
+  padding: 0 45px;
+  border-color: #000;
+  font-family: var(--font-family-ui);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: normal;
 }
 
 .preview {
   position: relative;
-  width: 100%;
-  height: 449px;
-  margin-top: 44px;
-  border-top: 1px solid #c5c1bb;
-  border-bottom: 1px solid #c5c1bb;
-  background: #efe8dd;
+  width: 320px;
+  height: 320px;
+  margin: 51px auto 0;
+  border: 1px solid #000;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow:
+    -4px -4px 10px rgb(0 0 0 / 25%),
+    4px 4px 10px rgb(0 0 0 / 25%);
 }
 
 .bagStage {
   position: absolute;
-  top: 125px;
-  left: 74px;
+  top: 77.5px;
+  left: 37.51px;
   width: 245.982px;
   height: 161px;
+  filter: blur(6px);
 }
 
 .bagImage {
@@ -164,13 +175,13 @@
 
 .lockedBadge {
   position: absolute;
-  top: 373px;
-  left: 27px;
+  top: 255.289px;
+  left: 19px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 171px;
   height: 46px;
+  padding: 0 30px;
   border: 1px solid #000;
   color: #000;
   background: #fff;
@@ -182,8 +193,9 @@
 }
 
 .backAction {
-  margin: 28px 26px 0 27px;
-  padding-bottom: 12px;
+  width: 340px;
+  margin: 38px 26px 0 27px;
+  padding-bottom: 34px;
 }
 
 .backButton {
@@ -196,6 +208,31 @@
   line-height: 15px;
 }
 
+@media (max-width: 392px) {
+  .optionGrid,
+  .action,
+  .backAction {
+    width: calc(100% - 53px);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .bringToLifeButton {
+    width: 100%;
+  }
+
+  .preview {
+    width: calc(100% - 73px);
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .bagStage {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 @media (max-width: 360px) {
   .description {
     font-size: 10.5px;
@@ -204,10 +241,5 @@
   .optionLabel {
     font-size: 27px;
     letter-spacing: -2.7px;
-  }
-
-  .bagStage {
-    left: 50%;
-    transform: translateX(-50%);
   }
 }

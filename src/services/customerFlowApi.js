@@ -1,5 +1,8 @@
 import { apiRequest } from './apiClient.js'
 
+const storeRequests = new Map()
+const storeSlotRequests = new Map()
+
 function sessionPath(sessionId, suffix = '') {
   return `/sessions/${encodeURIComponent(sessionId)}${suffix}`
 }
@@ -42,7 +45,7 @@ export function saveTextInput(sessionId, input, options) {
 
 export function saveVoiceInput(
   sessionId,
-  { audio, browserTranscript } = {},
+  { audio, browserTranscript, language = 'ko' } = {},
   options,
 ) {
   const body = new FormData()
@@ -54,6 +57,8 @@ export function saveVoiceInput(
   if (browserTranscript) {
     body.append('browserTranscript', browserTranscript)
   }
+
+  body.append('language', language)
 
   return apiRequest(sessionPath(sessionId, '/inputs/voice'), {
     method: 'POST',
@@ -95,17 +100,55 @@ export function getUnseen(sessionId, options) {
   return apiRequest(sessionPath(sessionId, '/unseen'), options)
 }
 
-export function getStores(options) {
-  return apiRequest('/stores', options)
+export function selectUnseenCandidate(sessionId, candidateId, options) {
+  return apiRequest(sessionPath(sessionId, '/unseen/selection'), {
+    method: 'PATCH',
+    body: { candidateId },
+    ...options,
+  })
+}
+
+export function getStores({ city, ...options } = {}) {
+  const normalizedCity = city?.trim() ?? ''
+  const query = normalizedCity
+    ? `?${new URLSearchParams({ city: normalizedCity }).toString()}`
+    : ''
+  const requestKey = normalizedCity.toLowerCase() || 'all'
+  const existingRequest = storeRequests.get(requestKey)
+
+  if (existingRequest) {
+    return existingRequest
+  }
+
+  const request = apiRequest(`/stores${query}`, options).catch((error) => {
+    storeRequests.delete(requestKey)
+    throw error
+  })
+
+  storeRequests.set(requestKey, request)
+  return request
 }
 
 export function getStoreSlots(storeId, date, options) {
   const query = new URLSearchParams({ date })
+  const requestKey = `${storeId}:${date}`
+  const existingRequest = storeSlotRequests.get(requestKey)
 
-  return apiRequest(
+  if (existingRequest) {
+    return existingRequest
+  }
+
+  const request = apiRequest(
     `/stores/${encodeURIComponent(storeId)}/slots?${query.toString()}`,
     options,
-  )
+  ).finally(() => {
+    if (storeSlotRequests.get(requestKey) === request) {
+      storeSlotRequests.delete(requestKey)
+    }
+  })
+
+  storeSlotRequests.set(requestKey, request)
+  return request
 }
 
 export function createReservation(reservation, options) {

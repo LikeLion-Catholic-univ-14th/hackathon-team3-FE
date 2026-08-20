@@ -1,8 +1,23 @@
-const DEFAULT_API_BASE_URL = 'http://localhost:8080/api/v1'
+const configuredBaseUrl = import.meta.env.VITE_API_BASE_URL?.replace(/\/+$/, '')
+const apiBaseUrl = configuredBaseUrl
+  ? `${configuredBaseUrl}/api/v1`
+  : configuredBaseUrl
 
-const apiBaseUrl = (
-  import.meta.env.VITE_API_BASE_URL ?? DEFAULT_API_BASE_URL
-).replace(/\/$/, '')
+if (!apiBaseUrl) {
+  throw new Error('VITE_API_BASE_URL is not configured')
+}
+
+export function resolveApiAssetUrl(assetUrl) {
+  if (!assetUrl) {
+    return ''
+  }
+
+  try {
+    return new URL(assetUrl, `${configuredBaseUrl}/`).toString()
+  } catch {
+    return assetUrl
+  }
+}
 
 export class ApiError extends Error {
   constructor(message, { status, payload }) {
@@ -35,6 +50,10 @@ export async function apiRequest(
   const requestHeaders = new Headers(headers)
   const isFormData = body instanceof FormData
   let requestBody = body
+
+  if (!requestHeaders.has('Accept')) {
+    requestHeaders.set('Accept', 'application/json')
+  }
 
   if (body !== undefined && body !== null && !isFormData) {
     requestHeaders.set('Content-Type', 'application/json')

@@ -14,6 +14,7 @@ export function createInitialCreationFlowState() {
       mode: 'text',
       text: '',
       voiceTranscript: '',
+      inputResult: null,
     },
     preferences: {
       purpose: null,
@@ -26,6 +27,15 @@ export function createInitialCreationFlowState() {
       visetosPattern: null,
       monogram: null,
       lockedAttribute: null,
+    },
+    shapeControls: {
+      silhouetteValue: 50,
+      proportionValue: 50,
+      attitudeValue: 50,
+      colorId: 'tan',
+      hasChosenColor: false,
+      visetosChoice: null,
+      monogramChoice: null,
     },
     intent: null,
     unseen: {
@@ -40,6 +50,7 @@ export function createInitialCreationFlowState() {
       time: null,
       reservationId: null,
       passCode: null,
+      reservation: null,
     },
   }
 }
@@ -78,6 +89,18 @@ export function creationFlowReducer(state, action) {
         preferences: {
           ...state.preferences,
           ...action.values,
+        },
+      }
+    case 'updateShapeSelection':
+      return {
+        ...state,
+        preferences: {
+          ...state.preferences,
+          ...action.preferences,
+        },
+        shapeControls: {
+          ...state.shapeControls,
+          ...action.controls,
         },
       }
     case 'setIntent':
