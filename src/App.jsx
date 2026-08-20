@@ -14,6 +14,7 @@ import RegistrationPage from './pages/Registration/RegistrationPage.jsx'
 import ShapePage from './pages/Shape/ShapePage.jsx'
 import StoreSelectionPage from './pages/StoreSelection/StoreSelectionPage.jsx'
 import UnseenResultPage from './pages/UnseenResult/UnseenResultPage.jsx'
+import WatchPage from './pages/Watch/WatchPage.jsx'
 
 function App() {
   useScrollToTop()
@@ -54,6 +55,10 @@ function App() {
           path="confirmation"
           element={<AppointmentConfirmationPage />}
         />
+      </Route>
+
+      <Route path="/watch" element={<BrandLayout />}>
+        <Route index element={<WatchPage />} />
       </Route>
 
       <Route path="*" element={<Navigate to="/" replace />} />
